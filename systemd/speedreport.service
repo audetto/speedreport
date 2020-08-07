@@ -1,0 +1,5 @@
+[Unit]
+Description=Ookla Speedtest Report
+
+[Service]
+ExecStart=/home/pi/projects/speedreport/systemd/report.sh
