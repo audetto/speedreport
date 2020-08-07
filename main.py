@@ -9,6 +9,9 @@ import pandas as pd
 def get_result():
     command = ['speedtest', '-f', 'csv', '--output-header']
     output = subprocess.run(command, capture_output=True)
+    if output.returncode:
+        print(output.stderr.decode())
+        raise RuntimeError(f'Exit code = {output.returncode}')
     stdout = output.stdout.decode()
     return stdout
 
