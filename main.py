@@ -7,7 +7,7 @@ import pandas as pd
 
 
 def get_result():
-    command = ['speedtest', '-f', 'csv', '--output-header']
+    command = ['speedtest', '-fg', 'csv', '--output-header']
     output = subprocess.run(command, capture_output=True)
     if output.returncode:
         print(output.stderr.decode())
